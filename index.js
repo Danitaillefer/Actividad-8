@@ -1,4 +1,4 @@
-const http = require("node:hhtp");
+const http = require("node:http");
 const app = require("./src/app");
 
 require("dotenv").config();
@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT);
 
 //Listeners
-server.on("listining", ()=> {
+server.on("listening", ()=> {
     console.log(`Server listening on port ${PORT}`);
 });
 

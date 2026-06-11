@@ -1,0 +1,48 @@
+### Obtener todos los posts
+GET http://localhost:3000/api/posts
+
+### Obtener un post por id
+GET http://localhost:3000/api/posts/1
+
+### Obtener un post que no existe
+GET http://localhost:3000/api/posts/999
+
+### Crear un nuevo post
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+    "titulo": "Mi primer post",
+    "descripcion": "Contenido del post de prueba",
+    "categoria": "Tecnología",
+    "autor_id": 1
+}
+
+###
+
+### Obtener todos los autores
+GET http://localhost:3000/api/autores
+
+### Obtener un autor por id
+GET http://localhost:3000/api/autores/1
+
+### Obtener un autor que no existe
+GET http://localhost:3000/api/autores/999
+
+### Crear un nuevo autor
+POST http://localhost:3000/api/autores
+Content-Type: application/json
+
+{
+    "nombre": "Juan García",
+    "email": "juan@garcia.com",
+    "imagen": "https://randomuser.me/api/portraits/men/1.jpg"
+}
+
+###
+
+### Obtener todos los posts de un autor
+GET http://localhost:3000/api/autores/1/posts
+
+### Obtener posts de un autor que no existe
+GET http://localhost:3000/api/autores/999/posts
