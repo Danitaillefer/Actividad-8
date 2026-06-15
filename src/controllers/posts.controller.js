@@ -14,7 +14,9 @@ const getAll = async (req, res) => {
 
 const getById = async (req, res) => {
     try{
+        console.log('ID recibido:', req.params.id);
         const post = await PostsModel.selectById(req.params.id);
+        console.log('Post encontrado' , post)
         if(!post){
             return res.status(404).json({
                 message: 'Post no encontrado'
@@ -31,7 +33,7 @@ const getById = async (req, res) => {
 const create = async (req, res) => {
     try{
         const result = await PostsModel.insert(req.body);
-        const nuevoPost = await PostsModel.selectById(result.insertID)
+        const nuevoPost = await PostsModel.selectById(result.insertId)
         if(!nuevoPost){
             res.status(404).json({
                 message: 'No existe post con es ID'

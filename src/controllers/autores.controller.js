@@ -30,7 +30,7 @@ const getById = async (req, res) => {
 const create = async (req, res) => {
     try{
         const result = await AutoresModel.insert(req.body);
-        const nuevoAutor = await AutoresModel.selectById(result.insertID)
+        const nuevoAutor = await AutoresModel.selectById(result.insertId)
         if(!nuevoAutor){
             res.status(404).json({
                 message: 'No existe autor con es ID'

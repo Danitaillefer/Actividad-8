@@ -3,8 +3,8 @@ const {getAll, getById, create} = require('../../controllers/autores.controller'
 const { getAutorById } = require('../../controllers/posts.controller');
 
 router.get('/', getAll);
-router.get('/:autorId', getById);
+router.get('/:id', getById);
 router.post('/', create);
-router.get('/:autorId/posts', getAutorById)
+router.get('/:id/posts', getAutorById)
 
 module.exports = router;

@@ -15,7 +15,7 @@ const selectById = async (id) => {
         FROM posts
         JOIN autores ON posts.autor_id = autores.id
         WHERE posts.id = ?
-        `, [id]);
+        `, [parseInt(id)]);
     return result[0];
 };
 
